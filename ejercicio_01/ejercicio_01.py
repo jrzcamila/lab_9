@@ -27,23 +27,28 @@ Restricciones
 
 
 def potencia(base, exponente):
-    pass
+    if exponente == 0:
+        return 1
+
+    else:
+        return base * potencia(base, exponente - 1)
 
 
 # ---------------------------------------------------------------------
 # Preguntas de análisis (responde debajo de cada pregunta)
 # ---------------------------------------------------------------------
 # 1. ¿Cuál es el caso base?
-#
+# El caso base es cuando el exponente es 0, en ese caso se devuelve 1.
 #
 # 2. ¿Qué argumento cambia en cada llamada?
-#
+# El argumento que cambia en cada llamada es el exponente, que se reduce en 1 en cada recursión.
 #
 # 3. ¿Qué operación queda pendiente mientras se resuelve la llamada recursiva?
-#
+#   La operación pendiente es la multiplicación de la base por el resultado de la llamada recursiva con el exponente reducido en 1.
 #
 # 4. Escribe las llamadas y los retornos de potencia(3, 3).
-#
+#   Llamadas: potencia(3, 3), potencia(3, 2), potencia(3, 1), potencia(3, 0)
+#   Retornos: 27, 9, 3, 1 
 #
 
 if __name__ == "__main__":
